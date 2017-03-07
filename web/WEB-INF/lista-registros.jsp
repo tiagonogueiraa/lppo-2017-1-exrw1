@@ -10,7 +10,7 @@
         <h1>Listagem de Registros</h1>
         <ol>
             <c:forEach var="pessoa" items="${pessoas}">
-                <li>${pessoa}</li>
+                <li>${pessoa.nome} ${pessoa.sobrenome} (${pessoa.telefone})</li>
             </c:forEach>
         </ol>
     </body>

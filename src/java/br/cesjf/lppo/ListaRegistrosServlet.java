@@ -23,16 +23,20 @@ public class ListaRegistrosServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<String> nomes = new ArrayList<>();
+        List<Contato> contatos = new ArrayList<>();
 
         try {
             //Pegar os dados do banco
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario", "senha");
             Statement operacao = conexao.createStatement();
-            ResultSet resultado = operacao.executeQuery("SELECT nome FROM contato");
+            ResultSet resultado = operacao.executeQuery("SELECT * FROM contato");
             while(resultado.next()){
-                nomes.add(resultado.getString("nome"));
+                Contato contatoAtual = new Contato();
+                contatoAtual.setNome(resultado.getString("nome"));
+                contatoAtual.setSobrenome(resultado.getString("sobrenome"));
+                contatoAtual.setTelefone(resultado.getString("telefone"));
+                contatos.add(contatoAtual);
             }
             
         } catch (ClassNotFoundException ex) {
@@ -41,7 +45,7 @@ public class ListaRegistrosServlet extends HttpServlet {
             Logger.getLogger(ListaRegistrosServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.setAttribute("pessoas", nomes);
+        request.setAttribute("pessoas", contatos);
         request.getRequestDispatcher("WEB-INF/lista-registros.jsp").forward(request, response);
     }
 
