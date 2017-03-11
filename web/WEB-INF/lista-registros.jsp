@@ -10,12 +10,14 @@
         <h1>Listagem de Registros</h1>
         <table>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Sobrenome</th>
                 <th>Telefone</th>
             </tr>
             <c:forEach var="pessoa" items="${pessoas}">
                 <tr>
+                    <td>${pessoa.id}</td>
                     <td>${pessoa.nome}</td>
                     <td>${pessoa.sobrenome}</td>
                     <td>${pessoa.telefone}</td>

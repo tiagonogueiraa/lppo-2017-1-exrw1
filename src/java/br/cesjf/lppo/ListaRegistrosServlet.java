@@ -33,6 +33,7 @@ public class ListaRegistrosServlet extends HttpServlet {
             ResultSet resultado = operacao.executeQuery("SELECT * FROM contato");
             while(resultado.next()){
                 Contato contatoAtual = new Contato();
+                contatoAtual.setId(resultado.getLong("id"));
                 contatoAtual.setNome(resultado.getString("nome"));
                 contatoAtual.setSobrenome(resultado.getString("sobrenome"));
                 contatoAtual.setTelefone(resultado.getString("telefone"));
