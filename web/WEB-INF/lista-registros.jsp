@@ -8,10 +8,19 @@
     </head>
     <body>
         <h1>Listagem de Registros</h1>
-        <ol>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+            </tr>
             <c:forEach var="pessoa" items="${pessoas}">
-                <li>${pessoa.nome} ${pessoa.sobrenome} (${pessoa.telefone})</li>
+                <tr>
+                    <td>${pessoa.nome}</td>
+                    <td>${pessoa.sobrenome}</td>
+                    <td>${pessoa.telefone}</td>
+                </tr>
             </c:forEach>
-        </ol>
+        </table>
     </body>
 </html>
