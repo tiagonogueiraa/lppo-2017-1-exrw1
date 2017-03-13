@@ -17,7 +17,7 @@
             </tr>
             <c:forEach var="pessoa" items="${pessoas}">
                 <tr>
-                    <td>${pessoa.id}</td>
+                    <td><a href="edita.html?id=${pessoa.id}">${pessoa.id}</a></td>
                     <td>${pessoa.nome}</td>
                     <td>${pessoa.sobrenome}</td>
                     <td>${pessoa.telefone}</td>
