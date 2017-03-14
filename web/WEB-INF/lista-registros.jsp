@@ -21,6 +21,8 @@
                     <td>${pessoa.nome}</td>
                     <td>${pessoa.sobrenome}</td>
                     <td>${pessoa.telefone}</td>
+                    
+                      <td><a href="exclui.html?id=${pessoa.id}">X</a></td>
                 </tr>
             </c:forEach>
         </table>

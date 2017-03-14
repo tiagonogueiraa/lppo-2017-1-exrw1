@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+//http://localhost:8080/lppo-2017-1-exrw1/lista.html
 @WebServlet(name = "ListaRegistrosServlet", urlPatterns = {"/lista.html"})
 public class ListaRegistrosServlet extends HttpServlet {
 
